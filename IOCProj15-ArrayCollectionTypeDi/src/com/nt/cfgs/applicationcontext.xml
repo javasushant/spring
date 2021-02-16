@@ -1,0 +1,37 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<beans xmlns="http://www.springframework.org/schema/beans"
+	xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+
+	xsi:schemaLocation="http://www.springframework.org/schema/beans http://www.springframework.org/schema/beans/spring-beans.xsd">
+	<!-- Spring bean cfg -->
+	<bean id="dobDt" class="java.util.Date">
+		<constructor-arg name="year" value="93"></constructor-arg>
+		<constructor-arg name="month" value="3"></constructor-arg>
+		<constructor-arg name="date" value="06"></constructor-arg>
+	</bean>
+	<bean id="sysDt" class="java.util.Date" />
+	<bean id="cobDt" class="java.util.Date">
+		<constructor-arg name="year" value="85"></constructor-arg>
+		<constructor-arg name="month" value="11"></constructor-arg>
+		<constructor-arg name="date" value="06"></constructor-arg>
+	</bean>
+
+	<!-- target class cfg -->
+	<bean id="cg" class="com.nt.beans.College">
+		<property name="favStudent">
+			<array>
+				<value>Sushant</value>
+				<value>Prashant</value>
+				<value>Rockey</value>
+				<value>Vickey</value>
+			</array>
+		</property>
+		<property name="impDate">
+		<array>
+		<ref bean="dobDt"/>
+		<ref bean="sysDt"/>
+		<ref bean="cobDt"/>
+		</array>
+		</property>
+	</bean>
+</beans>

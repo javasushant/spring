@@ -1,0 +1,11 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<beans xmlns="http://www.springframework.org/schema/beans"
+	xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+	xsi:schemaLocation="http://www.springframework.org/schema/beans http://www.springframework.org/schema/beans/spring-beans-4.3.xsd">
+
+<bean id="p1" class = "com.nt.singleton.Printer" />
+<bean id="p2" class = "com.nt.singleton.Printer" scope="singleton"/>
+<bean id="p3" class = "com.nt.singleton.Printer" scope="singleton" factory-method="getInstance"/>
+<bean id="p4" class = "com.nt.singleton.Printer" scope="prototype" />
+<bean id="p5" class = "com.nt.singleton.Printer" scope="prototype" factory-method="getInstance"/>
+</beans>

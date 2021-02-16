@@ -1,0 +1,46 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<beans xmlns="http://www.springframework.org/schema/beans"
+	xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+
+	xsi:schemaLocation="http://www.springframework.org/schema/beans
+	 http://www.springframework.org/schema/beans/spring-beans-4.3.xsd">
+	<!-- using static factory method and returning relevant class obj -->
+	<bean id="cal" class="java.util.Calendar"
+		factory-method="getInstance" /><!-- calls Calendar.getInstance() -->
+
+	<!-- using static factory method and returning its own class obj -->
+	<bean id="clazz" class="java.lang.Class" factory-method="forName"><!-- calls 
+			Class.forNmae(Java.util.Date) -->
+		<constructor-arg value="java.util.Date" />
+	</bean> <!-- supllied 1st arg value of Class.forName(-) -->
+
+	<!-- using Instance Fcatory method and returning different class obj -->
+	<bean id="props" class="java.lang.System"
+		factory-method="getProperties" /> <!-- calls System.getProperties() -->
+
+	<!-- *********************************************************** -->
+
+	<!-- using instance factory method and returning its own css obj -->
+	<bean id="s1" class="java.lang.String">
+		<constructor-arg value="Hello" />
+	</bean>
+
+	<bean id="s2" factory-method="concat" factory-bean="s1">  <!-- s1.concat("123") -->
+		<constructor-arg value="123"></constructor-arg>
+	</bean>
+
+	<!-- using instance factory method and returning different class obj -->
+	<bean id="sb" class="java.lang.StringBuffer">
+		<constructor-arg value="How r u  " />
+	</bean>
+
+	<bean id="s3" factory-bean="sb" factory-method="substring">
+		<constructor-arg value="0" />
+		<constructor-arg value="3" />
+	</bean>
+
+	<!-- using instance factory method and returning relevant class obj -->
+	<bean id="al" class="java.util.ArrayList"></bean>
+	<bean id="it" factory-bean="al" factory-method="iterator" />
+
+</beans>

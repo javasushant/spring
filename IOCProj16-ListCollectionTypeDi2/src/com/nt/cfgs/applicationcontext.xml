@@ -1,0 +1,107 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<beans xmlns="http://www.springframework.org/schema/beans"
+	xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+
+	xsi:schemaLocation="http://www.springframework.org/schema/beans http://www.springframework.org/schema/beans/spring-beans.xsd">
+	<!-- Spring bean cfg -->
+	<bean id="dobDt" class="java.util.Date">
+		<constructor-arg name="year" value="93"></constructor-arg>
+		<constructor-arg name="month" value="3"></constructor-arg>
+		<constructor-arg name="date" value="06"></constructor-arg>
+	</bean>
+	<bean id="sysDt" class="java.util.Date" />
+	<bean id="cobDt" class="java.util.Date">
+		<constructor-arg name="year" value="85"></constructor-arg>
+		<constructor-arg name="month" value="11"></constructor-arg>
+		<constructor-arg name="date" value="06"></constructor-arg>
+	</bean>
+
+	<!-- target class cfg -->
+	<bean name="stud" class="com.nt.beans.Student">
+		<property name="marks">
+			<list>
+				<value>98</value>
+				<value>97</value>
+				<value>96</value>
+				<value>99</value>
+			</list>
+		</property>
+		<property name="impDate">
+			<list>
+				<ref bean="dobDt" />
+				<ref bean="cobDt" />
+				<ref bean="sysDt" />
+			</list>
+		</property>
+	</bean>
+	<bean id="info" class="com.nt.beans.FacultyInfo">
+		<constructor-arg name="phoneNumbers">
+			<set value-type="java.lang.String">
+				<value>8881225253</value>
+				<value>8881225252</value>
+				<value>8881225254</value>
+			</set>
+		</constructor-arg>
+		<constructor-arg name="impDates">
+			<set value-type="java.util.Date">
+				<ref bean="dobDt" />
+				<ref bean="sysDt" />
+				<ref bean="cobDt" />
+			</set>
+		</constructor-arg>
+	</bean>
+	<bean id="finfo" class="com.nt.beans.FruitStore">
+		<constructor-arg name="fruitInfo">
+			<map key-type="java.lang.String" value-type="java.lang.Float">
+				<entry>
+					<key>
+						<value>Banana</value>
+					</key>
+					<value>12.5f</value>
+				</entry>
+				<entry key="Mango" value="80.0f"></entry>
+				<entry>
+					<key>
+						<value>Grapes</value>
+					</key>
+					<value>130.0f</value>
+				</entry>
+			</map>
+		</constructor-arg>
+		<constructor-arg name="impDates">
+			<map key-type="java.lang.String" value-type="java.util.Date">
+				<entry>
+					<key>
+						<value>Birth Date</value>
+					</key>
+					<ref bean="dobDt" />
+				</entry>
+				<entry key="Opening Date" value-ref="cobDt"></entry>
+
+				<entry>
+					<key>
+						<value>Today</value>
+					</key>
+					<ref bean="sysDt" />
+				</entry>
+			</map>
+		</constructor-arg>
+		
+
+	</bean>
+<bean id ="cinfo" class="com.nt.beans.CourseInfo">
+<constructor-arg name="courseDetails">
+<props >
+<prop key="hk">CJ</prop>
+<prop key="SUDHAKAR">ORACLE</prop>
+<prop key="NATRAJ">ADVJAVA</prop>
+</props>
+</constructor-arg>
+</bean>
+
+
+
+
+
+
+</beans>
