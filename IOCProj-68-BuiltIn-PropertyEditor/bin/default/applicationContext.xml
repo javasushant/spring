@@ -1,0 +1,23 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<beans xmlns="http://www.springframework.org/schema/beans"
+	xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+	xmlns:context="http://www.springframework.org/schema/context"
+	xsi:schemaLocation="http://www.springframework.org/schema/beans http://www.springframework.org/schema/beans/spring-beans-4.3.xsd
+		http://www.springframework.org/schema/context http://www.springframework.org/schema/context/spring-context-4.3.xsd">
+
+	<bean id="pinfo" class="com.nt.beans.TestBeans">
+	<property name="name" value="Sushant"/>
+	<property name="age" value="27.0f"/>
+	<property name="luckyNumber" value="9"/>
+	<property name="doj" value="10/26/2021"/>
+	<property name="moles" value="A mole on chin,A mole on right hand"/>
+	<property name="academicPercentage" value="ABC"/>
+	<property name="adharNo" value="2536525566"/>
+	<property name="favChar" value="C"/>
+	<property name="fileLocation" value="E:/soft/jar/photo.gif"/>
+	<property name="favLocaale" value="fr-FR"/>
+	<property name="fbUrl" value="http://www.fb.cm/group/344"/>
+	<property name="favClass" value="java.lang.System"/>
+	<property name="props" value="namae=raja,age=26,addrs=hyd"/>
+	</bean>
+</beans>
