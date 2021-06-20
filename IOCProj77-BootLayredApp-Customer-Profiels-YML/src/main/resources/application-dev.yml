@@ -1,0 +1,7 @@
+spring:
+  datasource:
+    type: org.apache.commons.dbcp2.BasicDataSource
+    driver-class-name: com.mysql.cj.jdbc.Drive
+    url: jdbc:mysql:///ntsp613db
+    username: root
+    password: root

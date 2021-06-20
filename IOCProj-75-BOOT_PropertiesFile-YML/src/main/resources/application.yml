@@ -1,0 +1,22 @@
+
+per:
+   info:
+      no: 101
+      name: Rockey
+      nickName:
+         - Thakur
+         - Sing
+         - Sharma
+
+      phoneNumber:
+         - 8881125
+         - 5525355
+         - 6535546
+      sweets:
+         - Rassogulla
+         - gajelbi
+         - Grapes
+      idCards:
+         adhar: 46523426
+         panCard: 1525
+         voterid: 3525
