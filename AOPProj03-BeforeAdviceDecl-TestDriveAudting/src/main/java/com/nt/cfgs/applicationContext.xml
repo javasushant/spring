@@ -1,0 +1,28 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<beans xmlns="http://www.springframework.org/schema/beans"
+	xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+	xmlns:aop="http://www.springframework.org/schema/aop"
+	xmlns:context="http://www.springframework.org/schema/context"
+	xsi:schemaLocation="http://www.springframework.org/schema/beans http://www.springframework.org/schema/beans/spring-beans-4.3.xsd
+		http://www.springframework.org/schema/aop http://www.springframework.org/schema/aop/spring-aop-4.3.xsd
+		http://www.springframework.org/schema/context http://www.springframework.org/schema/context/spring-context-4.3.xsd">
+
+	<!-- target class cfg as spring bean -->
+	<bean id="showroom" class="com.nt.service.CarShowRoom" />
+
+	<!-- Advice class cfg as spring bean -->
+	<bean id="tdAuditAdvice" class="com.nt.advice.TestDrivingAuditAdvice" />
+
+	<aop:config>
+		<!-- OGNL expression representing pointcut -->
+		<aop:pointcut expression="execution (java.lang.String com.nt.service.CarShowRoom.sellCar(..)) and args(custName,carModel,price)" id="ptc" />
+
+		<!-- make spring bean as aspectj app before advice -->
+		<aop:aspect ref="tdAuditAdvice">
+		
+			<aop:before method="testDriving" pointcut-ref="ptc" />
+			
+		</aop:aspect>
+
+	</aop:config>
+</beans>
